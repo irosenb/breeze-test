@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  money: 9.99
+  bank_account_id: 
+
+two:
+  money: 9.99
+  bank_account_id: 

@@ -3,11 +3,13 @@
 one:
   user_id: 
   car_id: 
-  rented_at: 2015-01-15 16:42:30
-  released_at: 2015-01-15 16:42:30
+  is_ended: false
+  start_date: 2015-01-15
+  end_date: 2015-01-15
 
 two:
   user_id: 
   car_id: 
-  rented_at: 2015-01-15 16:42:30
-  released_at: 2015-01-15 16:42:30
+  is_ended: false
+  start_date: 2015-01-15
+  end_date: 2015-01-15

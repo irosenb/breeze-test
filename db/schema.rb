@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116001400) do
+ActiveRecord::Schema.define(version: 20150116020805) do
+
+  create_table "account_histories", force: true do |t|
+    t.integer  "bank_account_id"
+    t.decimal  "money"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "account_histories", ["bank_account_id"], name: "index_account_histories_on_bank_account_id"
 
   create_table "bank_accounts", force: true do |t|
     t.integer  "user_id"
@@ -24,6 +33,16 @@ ActiveRecord::Schema.define(version: 20150116001400) do
 
   add_index "bank_accounts", ["user_id"], name: "index_bank_accounts_on_user_id"
 
+  create_table "car_histories", force: true do |t|
+    t.integer  "car_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "car_histories", ["car_id"], name: "index_car_histories_on_car_id"
+  add_index "car_histories", ["user_id"], name: "index_car_histories_on_user_id"
+
   create_table "cars", force: true do |t|
     t.integer  "user_id"
     t.string   "plate"
@@ -34,6 +53,28 @@ ActiveRecord::Schema.define(version: 20150116001400) do
   end
 
   add_index "cars", ["user_id"], name: "index_cars_on_user_id"
+
+  create_table "leases", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "car_id"
+    t.boolean  "is_ended"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "leases", ["car_id"], name: "index_leases_on_car_id"
+  add_index "leases", ["user_id"], name: "index_leases_on_user_id"
+
+  create_table "transactions", force: true do |t|
+    t.decimal  "money"
+    t.integer  "bank_account_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transactions", ["bank_account_id"], name: "index_transactions_on_bank_account_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

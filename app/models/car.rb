@@ -1,6 +1,7 @@
 class Car < ActiveRecord::Base
   belongs_to :user
-  has_and_bel :cars_users, through: 
+  has_one :car_history
+
   # Who's in this car? 
   # People in this car? 
   # Flexible searching 
