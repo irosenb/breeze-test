@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  plate: MyString
+  vin: MyString
+  in_use: false
+
+two:
+  user_id: 
+  plate: MyString
+  vin: MyString
+  in_use: false
